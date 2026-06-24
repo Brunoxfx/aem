@@ -10,7 +10,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
     adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class bannerModel {
+public class BannerModel {
 
     @ValueMapValue
     private String image;
