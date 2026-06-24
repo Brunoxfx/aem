@@ -1,0 +1,72 @@
+// Card component — estética inspirada nos cards do site da Foursys
+// (azul corporativo + acento laranja, visual limpo e moderno)
+
+$card-blue:        #762d00;
+$card-blue-accent: #ff6c17;
+$card-orange:      #ff6a13;
+$card-surface:     #ffffff;
+$card-text:        #1a1a2e;
+$card-muted:       #5a6275;
+$card-border:      #e6e9f0;
+$card-radius:      12px;
+
+.cmp-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.75rem;
+    background: $card-surface;
+    border: 1px solid $card-border;
+    border-top: 4px solid $card-blue-accent;
+    border-radius: $card-radius;
+    box-shadow: 0 6px 20px rgba(10, 42, 102, 0.08);
+    box-sizing: border-box;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 32px $card-blue;
+        border-top-color: $card-orange;
+    }
+}
+
+.cmp-card__title {
+    margin: 0 0 0.75rem;
+    color: $card-blue;
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.cmp-card__description {
+    margin: 0 0 1.5rem;
+    color: $card-muted;
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.cmp-card__button {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.7rem 1.6rem;
+    background: $card-blue-accent;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        background: $card-orange;
+        transform: translateX(2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $card-orange;
+        outline-offset: 2px;
+    }
+}
