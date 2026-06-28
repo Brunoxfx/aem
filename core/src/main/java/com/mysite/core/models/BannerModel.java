@@ -16,11 +16,18 @@ public class BannerModel {
     private String image;
 
     @ValueMapValue
+    private String title;
+
+    @ValueMapValue
     private String text;
 
 
     public String getImage() {
         return image;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public String getText() {

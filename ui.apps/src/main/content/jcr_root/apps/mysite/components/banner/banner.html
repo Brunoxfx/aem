@@ -1,6 +1,9 @@
 <div
     class="banner"
-    data-sly-use.BannerModel="com.mysite.core.models.BannerModel">
-    <img src="${BannerModel.image}" alt="${BannerModel.text}" />
-    <p>${BannerModel.text}</p>
+    data-sly-use.banner="com.mysite.core.models.BannerModel">
+    <img data-sly-test="${banner.image}" class="banner__image" src="${banner.image}" alt="${banner.title}" />
+    <div class="banner__content">
+        <h2 data-sly-test="${banner.title}" class="banner__title">${banner.title}</h2>
+        <p data-sly-test="${banner.text}" class="banner__text">${banner.text}</p>
+    </div>
 </div>

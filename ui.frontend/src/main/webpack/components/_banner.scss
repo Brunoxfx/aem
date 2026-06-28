@@ -1,0 +1,21 @@
+.banner {
+    width: 100%;
+}
+
+.banner img,
+.banner__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.banner__content {
+    margin-inline: 0;
+}
+
+.banner__title,
+.banner__text {
+    margin-left: 0;
+    margin-right: 0;
+}
