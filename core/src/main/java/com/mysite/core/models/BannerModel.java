@@ -1,17 +1,25 @@
 package com.mysite.core.models;
 
+import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.export.json.ExporterConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 
 @Model(
-    adaptables = {Resource.class, SlingHttpServletRequest.class},
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+        adaptables = {SlingHttpServletRequest.class, Resource.class},
+        adapters = {BannerModel.class, ComponentExporter.class},
+        resourceType = BannerModel.RESOURCE_TYPE
+)
+@Exporter(
+        name = ExporterConstants.SLING_MODEL_EXPORTER_NAME,
+        extensions = ExporterConstants.SLING_MODEL_EXTENSION
 )
 public class BannerModel {
+    protected static final String RESOURCE_TYPE = "mysite/components/banner";
 
     @ValueMapValue
     private String image;
