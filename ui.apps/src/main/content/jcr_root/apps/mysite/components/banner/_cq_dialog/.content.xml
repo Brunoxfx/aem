@@ -1,47 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root
-    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-    xmlns:cq="http://www.day.com/jcr/cq/1.0"
-    xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="nt:unstructured"
-    jcr:title="Banner"
-    sling:resourceType="cq/gui/components/authoring/dialog">
-
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Banner"
+          sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
-
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-
-            <column
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/container">
-
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-
-                    <image
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="Image"
-                        name="./image"
-                        rootPath="/content/dam" />
-
-                    <title
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Titulo"
-                        name="./title" />
-
-                    <text
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Texto"
-                        name="./text" />
-
-
+                    <background
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Background - Desktop"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backgroundColor jcr:primaryType="nt:unstructured"
+                                                     sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                     fieldLabel="Background Color"
+                                                     name="./backgroundColor"
+                                                     showDefaultColors="{Boolean}false"
+                                                     showProperties="{Boolean}false"
+                                                     showSwatches="{Boolean}true"
+                                                     variant="swatch">
+                                        <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/bin/internal/v1/datasource/colors"
+                                                colorCategory="general"/>
+                                    </backgroundColor>
+                                    <image
+                                            fieldLabel="Background Image"
+                                            granite:class="cmp-image__editor-file-upload"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                            class="cq-droptarget"
+                                            fileNameParameter="./fileName"
+                                            allowUpload="{Boolean}false"
+                                            fileReferenceParameter="./fileReference"
+                                            mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                            name="./fileName"/>
+                                </items>
+                            </column>
+                        </items>
+                    </background>
+                    <backgroundMobile
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Background - Mobile"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backgroundColor jcr:primaryType="nt:unstructured"
+                                                     sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                     fieldLabel="Background Color"
+                                                     name="./backgroundColorMobile"
+                                                     showDefaultColors="{Boolean}false"
+                                                     showProperties="{Boolean}false"
+                                                     showSwatches="{Boolean}true"
+                                                     variant="swatch">
+                                        <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/bin/internal/v1/datasource/colors"
+                                                colorCategory="general"/>
+                                    </backgroundColor>
+                                    <image
+                                            fieldLabel="Background Image"
+                                            granite:class="cmp-image__editor-file-upload"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                            class="cq-droptarget"
+                                            fileNameParameter="./fileNameMobile"
+                                            allowUpload="{Boolean}false"
+                                            fileReferenceParameter="./fileReferenceMobile"
+                                            mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                            name="./fileNameMobile"/>
+                                </items>
+                            </column>
+                        </items>
+                    </backgroundMobile>
+                    <styles
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Styles - Desktop"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alignment
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Alignment"
+                                            name="./alignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <center
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Center"
+                                                    selected="{Boolean}true"
+                                                    value="CENTER"/>
+                                            <left
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Left"
+                                                    value="LEFT"/>
+                                            <right
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Right"
+                                                    value="RIGHT"/>
+                                        </items>
+                                    </alignment>
+                                    <borderRadius
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldLabel="Border Radius"
+                                            name="./borderRadius"
+                                            min="{Double}0"/>
+                                    <paddingTopBottom
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldLabel="Padding - Top and Bottom"
+                                            name="./paddingTopBottom"
+                                            min="{Double}0"/>
+                                    <paddingLeftRight
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldLabel="Padding - Left and Right"
+                                            name="./paddingLeftRight"
+                                            min="{Double}0"/>
+                                </items>
+                            </column>
+                        </items>
+                    </styles>
+                    <stylesMobile
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Styles - Mobile"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <borderRadius
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldLabel="Border Radius"
+                                            name="./borderRadiusMobile"
+                                            min="{Double}0"/>
+                                    <paddingTopBottom
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldLabel="Padding - Top and Bottom"
+                                            name="./paddingTopBottomMobile"
+                                            min="{Double}0"/>
+                                    <paddingLeftRight
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                            fieldLabel="Padding - Left and Right"
+                                            name="./paddingLeftRightMobile"
+                                            min="{Double}0"/>
+                                </items>
+                            </column>
+                        </items>
+                    </stylesMobile>
                 </items>
-            </column>
+            </tabs>
         </items>
     </content>
 </jcr:root>

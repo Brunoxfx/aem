@@ -1,5 +1,16 @@
 .banner {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    min-height: 558px;
+    position: relative;
     width: 100%;
+}
+
+.section-agilidade-organizacional {
+    position: relative;
+    width: 100%;
+    color: #fff;
 }
 
 .banner img,
@@ -12,10 +23,22 @@
 
 .banner__content {
     margin-inline: 0;
+    width: 100%;
 }
 
 .banner__title,
+.banner__subtitle,
 .banner__text {
     margin-left: 0;
     margin-right: 0;
+}
+
+.banner__button {
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .banner {
+        min-height: 320px;
+    }
 }

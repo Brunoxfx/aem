@@ -1,9 +1,7 @@
 <div
-    class="banner"
-    data-sly-use.banner="com.mysite.core.models.BannerModel">
-    <img data-sly-test="${banner.image}" class="banner__image" src="${banner.image}" alt="${banner.title}" />
+    data-sly-use.banner="com.mysite.core.models.BannerModel"
+    class="banner">
     <div class="banner__content">
-        <h2 data-sly-test="${banner.title}" class="banner__title">${banner.title}</h2>
-        <p data-sly-test="${banner.text}" class="banner__text">${banner.text}</p>
+        <sly data-sly-resource="${'items' @ resourseType='wcm/foundation/components/parsys'}"/>
     </div>
 </div>
