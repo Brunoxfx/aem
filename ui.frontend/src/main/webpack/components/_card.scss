@@ -1,72 +1,119 @@
-// Card component — estética inspirada nos cards do site da Foursys
-// (azul corporativo + acento laranja, visual limpo e moderno)
+$card-surface:  #ffffff;
+$card-title:    #16213e;
+$card-text:     #4a5568;
+$card-accent:   #ff6a13;
+$card-radius:   16px;
 
-$card-blue:        #762d00;
-$card-blue-accent: #ff6c17;
-$card-orange:      #ff6a13;
-$card-surface:     #ffffff;
-$card-text:        #1a1a2e;
-$card-muted:       #5a6275;
-$card-border:      #e6e9f0;
-$card-radius:      12px;
+@mixin card-theme($surface, $accent, $title, $text, $btn-bg, $btn-bg-hover, $btn-text) {
+    background: $surface;
+
+    .cmp-card__title {
+        color: $title;
+
+        &::after {
+            background: $accent;
+        }
+    }
+
+    .cmp-card__description {
+        color: $text;
+    }
+
+    
+}
 
 .cmp-card {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 1.75rem;
-    background: $card-surface;
-    border: 1px solid $card-border;
-    border-top: 4px solid $card-blue-accent;
+    padding: 2.25rem 2rem;
     border-radius: $card-radius;
-    box-shadow: 0 6px 20px rgba(10, 42, 102, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 24, 64, 0.08);
     box-sizing: border-box;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    color: inherit;
+    text-decoration: none;
 
     &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 14px 32px $card-blue;
-        border-top-color: $card-orange;
+        box-shadow: 0 18px 42px rgba(16, 24, 64, 0.14);
     }
+
+    @include card-theme(
+        $surface: $card-surface,
+        $accent: $card-accent,
+        $title: $card-title,
+        $text: $card-text,
+        $btn-bg: $card-title,
+        $btn-bg-hover: $card-accent,
+        $btn-text: #ffffff
+    );
 }
 
 .cmp-card__title {
-    margin: 0 0 0.75rem;
-    color: $card-blue;
-    font-size: 1.375rem;
-    font-weight: 700;
-    line-height: 1.3;
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 36px;
+        height: 4px;
+        border-radius: 2px;
+    }
 }
 
 .cmp-card__description {
-    margin: 0 0 1.5rem;
-    color: $card-muted;
+    margin: 0;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     flex-grow: 1;
 }
 
-.cmp-card__button {
-    align-self: flex-start;
-    margin-top: auto;
-    padding: 0.7rem 1.6rem;
-    background: $card-blue-accent;
-    color: #ffffff;
-    border: none;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+.cmp-card--laranja .cmp-card,
+.cmp-card.cmp-card--laranja {
+    @include card-theme(
+        $surface: #ffffff,
+        $accent: #ff6a13,
+        $title: #b3420a,
+        $text: $card-text,
+        $btn-bg: #ff6a13,
+        $btn-bg-hover: #16213e,
+        $btn-text: #ffffff
+    );
+}
 
-    &:hover {
-        background: $card-orange;
-        transform: translateX(2px);
-    }
+.cmp-card--escuro .cmp-card,
+.cmp-card.cmp-card--escuro {
+    @include card-theme(
+        $surface: #14182b,
+        $accent: #ff6a13,
+        $title: #ffffff,
+        $text: #b8c0d4,
+        $btn-bg: #ff6a13,
+        $btn-bg-hover: #ffffff,
+        $btn-text: #14182b
+    );
+}
 
-    &:focus-visible {
-        outline: 2px solid $card-orange;
-        outline-offset: 2px;
-    }
+.cmp-card--minimalista .cmp-card,
+.cmp-card.cmp-card--minimalista {
+    @include card-theme(
+        $surface: #ffffff,
+        $accent: #d6dae3,
+        $title: #1a1a2e,
+        $text: $card-text,
+        $btn-bg: transparent,
+        $btn-bg-hover: #1a1a2e,
+        $btn-text: #1a1a2e
+    );
+    box-shadow: 0 4px 16px rgba(16, 24, 64, 0.06);
+
+    
 }
