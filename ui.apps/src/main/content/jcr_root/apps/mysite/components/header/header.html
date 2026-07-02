@@ -1,0 +1,42 @@
+<sly data-sly-use.header="com.mysite.core.models.HeaderModel" />
+
+<div class="container">
+    <header class="header">
+
+        <div class="header__logo">
+            <img
+                class="header-logo"
+                src="https://foursys.com.br/images/logo-foursys2.png"
+                alt="Logo da Foursys">
+        </div>
+
+        <nav class="header__nav">
+            <ul class="header__menu" data-sly-list.item="${header.menuItems}">
+                <li>
+                    <a href="#">${item}</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__right">
+
+            <a href="#" class="header__contact-button">
+                Fale conosco
+            </a>
+
+            <div class="header-language">
+                <img
+                    class="header-language-globe"
+                    src="https://foursys.com.br/images/globe2.svg"
+                    alt="Ícone de globo">
+
+                <select class="header-language-option">
+                    <option value="pt">PT-BR</option>
+                    <option value="us">ENG</option>
+                </select>
+            </div>
+
+        </div>
+
+    </header>
+</div>
