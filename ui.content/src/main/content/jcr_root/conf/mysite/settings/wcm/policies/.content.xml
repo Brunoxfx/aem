@@ -315,6 +315,38 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_1575031387650>
             </teaser>
+            <card jcr:primaryType="nt:unstructured">
+                <policy_card_estilos
+                    jcr:description="Permite ao autor escolher o tema visual do card (cores de texto, fundo e destaque)."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Estilos do Card"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            cq:styleGroupLabel="Tema do Card">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    jcr:primaryType="nt:unstructured"
+                                    cq:styleClasses="cmp-card--laranja"
+                                    cq:styleId="{Long}1751380000001"
+                                    cq:styleLabel="Laranja"/>
+                                <item1
+                                    jcr:primaryType="nt:unstructured"
+                                    cq:styleClasses="cmp-card--escuro"
+                                    cq:styleId="{Long}1751380000002"
+                                    cq:styleLabel="Escuro"/>
+                                <item2
+                                    jcr:primaryType="nt:unstructured"
+                                    cq:styleClasses="cmp-card--minimalista"
+                                    cq:styleId="{Long}1751380000003"
+                                    cq:styleLabel="Minimalista"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_card_estilos>
+            </card>
             <download jcr:primaryType="nt:unstructured">
                 <policy_1575032193319
                     jcr:description="Sets the title size to H3."
