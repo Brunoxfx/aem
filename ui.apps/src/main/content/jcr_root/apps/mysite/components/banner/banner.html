@@ -1,7 +1,27 @@
 <div
     data-sly-use.banner="com.mysite.core.models.BannerModel"
-    class="banner">
-    <div class="banner__content">
-        <sly data-sly-resource="${'items' @ resourseType='wcm/foundation/components/parsys'}"/>
+    class="banner"
+    style="${banner.style @ context='styleString'}">
+    <sly data-sly-test.hasBackgroundImage="${banner.backgroundImage}">
+        <div
+            class="banner__background"
+            aria-hidden="true"
+            style="background-color: ${banner.backgroundColorValue @ context='styleToken'}; background-image: url('${banner.backgroundImage @ context='uri'}');"></div>
+    </sly>
+    <sly data-sly-test="${!hasBackgroundImage && banner.backgroundColorValue}">
+        <div
+            class="banner__background"
+            aria-hidden="true"
+            style="background-color: ${banner.backgroundColorValue @ context='styleToken'};"></div>
+    </sly>
+    <div
+        class="banner__content"
+        data-banner-content-max-width="${properties.contentMaxWidth}"
+        data-banner-content-offset-x="${properties.contentOffsetX}"
+        data-banner-content-offset-y="${properties.contentOffsetY}"
+        data-banner-text-max-width="${properties.textMaxWidth}"
+        data-banner-button-offset-x="${properties.buttonOffsetX}"
+        data-banner-button-offset-y="${properties.buttonOffsetY}">
+        <sly data-sly-resource="${'items' @ resourceType='wcm/foundation/components/parsys'}"/>
     </div>
 </div>

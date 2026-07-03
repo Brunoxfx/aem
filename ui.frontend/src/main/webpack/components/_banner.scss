@@ -1,5 +1,8 @@
 .banner {
     align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #fff;
     display: flex;
     min-height: 558px;
@@ -22,8 +25,21 @@
 }
 
 .banner__content {
+    box-sizing: border-box;
     margin-inline: 0;
+    max-width: var(--banner-content-max-width);
+    position: relative;
     width: 100%;
+    z-index: 1;
+}
+
+.banner__background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    inset: 0;
+    position: absolute;
+    z-index: 0;
 }
 
 .banner__title,
@@ -33,8 +49,50 @@
     margin-right: 0;
 }
 
-.banner__button {
+.banner .text,
+.banner .cmp-text {
+    box-sizing: border-box;
+    max-width: var(--banner-text-max-width);
+}
+
+.banner .cmp-text p {
+    max-width: var(--banner-text-max-width);
+}
+
+.banner .button {
     display: inline-block;
+}
+
+.banner .button a,
+.banner a.cmp-button,
+.banner .cmp-button,
+.banner .cmp-button__link,
+.banner .outline-button {
+    background: transparent;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 36px;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    padding: 11px 32px;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.banner .button a:hover,
+.banner a.cmp-button:hover,
+.banner .cmp-button:hover,
+.banner .cmp-button__link:hover,
+.banner .outline-button:hover {
+    background: #fff;
+    color: #FF5315 !important;
+    text-decoration: none;
+}
+
+.banner .cmp-button__text {
+    color: inherit;
 }
 
 @media (max-width: 767px) {
