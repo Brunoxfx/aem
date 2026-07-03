@@ -7,6 +7,9 @@
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
+            <!-- 
+            Seção de texto do card
+            -->
             <tabs
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
@@ -44,6 +47,9 @@
                             </columns>
                         </items>
                     </text>
+                    <!-- 
+                    Seção de link do card
+                    -->
                     <link
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Link"

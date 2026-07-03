@@ -1,9 +1,14 @@
+// Card Theme (Cores e estilos do card)
 $card-surface:  #ffffff;
 $card-title:    #16213e;
 $card-text:     #4a5568;
 $card-accent:   #ff6a13;
 $card-radius:   16px;
+$card-height:   300px;
+$card-gutter:   0.75rem;
+$card-desc-lines: 5;
 
+// Mixin para aplicar o tema do card
 @mixin card-theme($surface, $accent, $title, $text, $btn-bg, $btn-bg-hover, $btn-text) {
     background: $surface;
 
@@ -22,14 +27,17 @@ $card-radius:   16px;
     
 }
 
+// Card Base (Estilos base do card)
 .cmp-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: $card-height;
     padding: 2.25rem 2rem;
     border-radius: $card-radius;
     box-shadow: 0 10px 30px rgba(16, 24, 64, 0.08);
     box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     color: inherit;
     text-decoration: none;
@@ -50,6 +58,7 @@ $card-radius:   16px;
     );
 }
 
+// Título do card
 .cmp-card__title {
     position: relative;
     margin: 0 0 1.5rem;
@@ -57,6 +66,8 @@ $card-radius:   16px;
     font-size: 1.6rem;
     font-weight: 800;
     line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: break-word;
 
     &::after {
         content: "";
@@ -69,11 +80,25 @@ $card-radius:   16px;
     }
 }
 
+// Descrição do card
 .cmp-card__description {
     margin: 0;
     font-size: 1rem;
     line-height: 1.7;
     flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: $card-desc-lines;
+    line-clamp: $card-desc-lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+// Espaçamento entre os cards dentro do grid do AEM
+.aem-GridColumn:has(> .cmp-card) {
+    padding: 0 $card-gutter $card-gutter;
 }
 
 .cmp-card--laranja .cmp-card,
