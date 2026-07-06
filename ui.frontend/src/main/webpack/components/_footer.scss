@@ -1,0 +1,195 @@
+.foursys-footer {
+    background-color: #062f4f;
+    color: #fff;
+    padding: 60px 0 40px 0;
+    margin-top: auto;
+    font-family: Arial, sans-serif;
+    box-shadow: none;
+    border-top: 4px solid #ffb703;
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1.2fr 1fr 1fr 1fr;
+        align-items: start;
+    }
+
+    &__brand {
+        strong {
+            display: block;
+            font-size: 1.35rem;
+            color: #ffb703;
+            margin-bottom: 0.65rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 0 0 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    &__highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        button {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff8e1;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    &__section {
+        h3 {
+            margin: 0 0 0.7rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffb703;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    &__links {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        a {
+            color: #ffb703;
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #f55d0b;
+            }
+        }
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.85rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: #ffb703;
+        color: #08243e;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(255, 183, 3, 0.24);
+        }
+    }
+
+    &__content {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        align-items: start;
+    }
+
+    &__column {
+        min-width: 0;
+    }
+
+    &__bottom {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .cmp-title__text {
+        margin: 0 0 0.7rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ffb703;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .cmp-text p {
+        margin: 0;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cmp-image img {
+        max-width: 100%;
+        border-radius: 0.75rem;
+        display: block;
+    }
+
+    .cmp-button__link {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 0.85rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: #ffb703;
+        color: #08243e;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(255, 183, 3, 0.24);
+        }
+    }
+
+    @media (max-width: 900px) {
+        &__inner {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 2.25rem 1rem 1.25rem;
+
+        &__inner {
+            grid-template-columns: 1fr;
+        }
+
+        &__bottom {
+            flex-direction: column;
+        }
+    }
+}

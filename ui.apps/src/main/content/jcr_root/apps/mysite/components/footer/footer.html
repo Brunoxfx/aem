@@ -1,0 +1,15 @@
+<footer class="foursys-footer" data-sly-use.footer="com.mysite.core.models.FooterCard">
+    <div class="foursys-footer__inner">
+        <div class="foursys-footer__content">
+            <div class="foursys-footer__column" data-sly-resource="${'brand' @ resourceType='wcm/foundation/components/parsys'}"></div>
+            <div class="foursys-footer__column" data-sly-resource="${'section1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+            <div class="foursys-footer__column" data-sly-resource="${'section2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+            <div class="foursys-footer__column" data-sly-resource="${'section3' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+
+    <div class="foursys-footer__bottom" data-sly-test="${footer.copyright}">
+        <span>${footer.copyright}</span>
+        <span>© 2026 Foursys. Todos os direitos reservados.</span>
+    </div>
+</footer>
