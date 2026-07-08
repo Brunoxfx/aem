@@ -15,13 +15,20 @@ public class HeaderModel {
     private String[] menuItems;
 
     @ValueMapValue
-    private String[] textButtonHeader;
+    private String textButtonHeader;
+
+    @ValueMapValue
+    private String logo;
 
     public String[] getMenuItems() {
         return menuItems;
     }
 
-    public String[] getTextButtonHeader() {
+    public String getTextButtonHeader() {
         return textButtonHeader;
+    }
+
+    public String getLogo() {
+        return logo;
     }
 }
