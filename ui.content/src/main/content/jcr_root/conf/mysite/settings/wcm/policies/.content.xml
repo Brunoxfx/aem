@@ -305,6 +305,16 @@
                     </cq:authoring>
                 </policy_1575040440977>
             </container>
+            <container_v1 jcr:primaryType="nt:unstructured">
+                <policy_responsive_container
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Responsive Container Policy"
+                    jcr:description="Permite componentes de conteúdo dentro do Responsive Container."
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:My Site - Content,/apps/mysite/components/form/container]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_responsive_container>
+            </container_v1>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
                     jcr:description="Sets the title size to H3."

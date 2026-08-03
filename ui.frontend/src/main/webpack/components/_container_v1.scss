@@ -1,0 +1,21 @@
+@import 'breakpoints';
+
+.cmp-container--responsive {
+    box-sizing: border-box;
+    float: none !important;
+    width: 100%;
+    max-width: $desktop-width;
+    margin: 0 auto;
+
+    @include mobile {
+        padding: 16px;
+    }
+
+    @include tablet {
+        padding: 24px;
+    }
+
+    @include desktop {
+        padding: 32px;
+    }
+}
